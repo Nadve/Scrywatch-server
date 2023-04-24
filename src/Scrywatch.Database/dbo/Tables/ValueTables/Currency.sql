@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Currency]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Value] NCHAR(3) NOT NULL UNIQUE
+)

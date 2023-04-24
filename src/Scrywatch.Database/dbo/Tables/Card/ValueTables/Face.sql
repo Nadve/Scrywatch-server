@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Face]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Value] NVARCHAR(5) NOT NULL UNIQUE
+)

@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[spMerged_Get]
+AS
+BEGIN
+	SELECT * FROM Merged
+END

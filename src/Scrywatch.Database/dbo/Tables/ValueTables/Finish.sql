@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Finish]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Value] NVARCHAR(10) NOT NULL UNIQUE
+)

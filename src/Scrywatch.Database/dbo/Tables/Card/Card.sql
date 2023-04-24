@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Card]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Guid] NVARCHAR(450) NOT NULL UNIQUE,
+    [NameId] INT NOT NULL, 
+    [SetId] INT NOT NULL, 
+    [RarityId] INT NOT NULL,
+    [CollectorNumber] NVARCHAR(10) NOT NULL,
+    CONSTRAINT FK_Card_NameId FOREIGN KEY (NameId) REFERENCES [Name](Id),
+	CONSTRAINT FK_Card_SetId FOREIGN KEY (SetId) REFERENCES [Set](Id),
+	CONSTRAINT FK_Card_RarityId FOREIGN KEY (RarityId) REFERENCES [Rarity](Id)
+)

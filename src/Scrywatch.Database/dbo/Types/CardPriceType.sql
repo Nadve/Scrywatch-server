@@ -1,0 +1,8 @@
+﻿CREATE TYPE [dbo].[CardPriceType] AS TABLE
+(
+	[CardGuid] VARCHAR(450) NOT NULL,
+	[Finish] NVARCHAR(10) NOT NULL,
+	[Currency] NCHAR(3) NOT NULL,
+	[Date] DATE NOT NULL DEFAULT GETDATE(),
+	[Value] FLOAT NOT NULL
+)

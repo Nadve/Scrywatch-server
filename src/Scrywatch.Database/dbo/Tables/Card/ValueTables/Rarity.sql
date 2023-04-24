@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Rarity]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Value] NVARCHAR(20) NOT NULL UNIQUE
+)

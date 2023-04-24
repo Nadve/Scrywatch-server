@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Intention]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Value] NVARCHAR(4) NOT NULL UNIQUE
+)

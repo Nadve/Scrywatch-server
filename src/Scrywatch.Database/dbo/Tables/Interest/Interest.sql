@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[Interest]
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[UserId] NVARCHAR(450) NOT NULL,
+	[CardId] INT NOT NULL,
+	[Goal] INT NOT NULL DEFAULT(100),
+	[FinishId] INT NOT NULL,
+	[CurrencyId] INT NOT NULL,
+	[IntentionId] INT NOT NULL,
+	CONSTRAINT UQ_Interest_Ids UNIQUE([UserId], [CardId], [FinishId], [CurrencyId], [IntentionId]),
+	CONSTRAINT FK_Interest_UserId FOREIGN KEY (UserId) REFERENCES [User](Id) ON DELETE CASCADE,
+	CONSTRAINT FK_Interest_CardId FOREIGN KEY (CardId) REFERENCES [Card](Id) ON DELETE CASCADE,
+	CONSTRAINT FK_Interest_FinishId FOREIGN KEY (FinishId) REFERENCES [Finish](Id) ON DELETE CASCADE,
+	CONSTRAINT FK_Interest_IntentionId FOREIGN KEY (IntentionId) REFERENCES [Intention](Id) ON DELETE CASCADE
+)
