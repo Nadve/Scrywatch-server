@@ -7,7 +7,6 @@
 * [Features](#features)
 * [Setup](#setup)
 * [Usage](#usage)
-* [Room For Improvement](#room-for-improvement)
 * [Contact](#contact)
 
 ## General Info
