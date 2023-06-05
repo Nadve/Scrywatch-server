@@ -7,16 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="NotificationTemplate.html" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Scrywatch.Infrastructure\Scrywatch.Infrastructure.csproj" />
     <ProjectReference Include="..\Scrywatch.MergeService\Scrywatch.MergeService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,14 @@
 # Scrywatch-server
 
 >This is a back-end of Scrywatch. Web application for managing Magic: The Gathering card collection.
-
 ## Table of contents
-* [General Info](#General%20Info)
-* [Technologies Used](#Technologies%20Used)
-* [Features](#Features)
-* [Setup](#Setup)
-* [Usage](#Usage)
-* [Room For Improvement](#Room%20For%20Improvement)
-* [Contact](#Contact)
+* [General Info](#general-info)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Room For Improvement](#room-for-improvement)
+* [Contact](#contact)
 
 ## General Info
 Magic: The Gathering is a collectible card game spread all over the world. If
@@ -49,8 +48,7 @@ he’ll be informed via email.
 * Modify the appSettings.json file located in Scrywatch.Api
   * Change value of ConnectionString.Default to your connection string
   * Change AuthToken.Key value
-  * By default all emails will be sent to [Ethereal](https://ethereal.email/)
-  * If you wish to send emails to users change the values to match your mail server
+  * If you wish to send emails to users change the Mail section values to match your mail server. By default all emails will be sent to [Ethereal](https://ethereal.email/)
 
 ## Usage
 `dotnet run`

@@ -42,13 +42,21 @@ public class Worker : BackgroundService
             DateTime bulkDate = bulk.AllCardsUpdated;
             _logger.LogInformation($"Scryfall data last updated: {bulkDate}");
 
-            sqlConnection = new SqlConnection(_config.GetConnectionString("Default"));
-            sqlConnection.Open();
-            DateTime lastMerge = (await sqlConnection.QueryAsync<DateTime>(
-                StoredProcedure.GetLastMerge,
-                commandType: CommandType.StoredProcedure)).First();
-            sqlConnection.Close();
-            _logger.LogInformation($"Database last updated: {lastMerge}");
+            DateTime lastMerge = DateTime.Now;
+            try
+            {
+                sqlConnection = new SqlConnection(_config.GetConnectionString("Default"));
+                sqlConnection.Open();
+                lastMerge = (await sqlConnection.QueryAsync<DateTime>(
+                    StoredProcedure.GetLastMerge,
+                    commandType: CommandType.StoredProcedure)).First();
+                sqlConnection.Close();
+                _logger.LogInformation($"Database last updated: {lastMerge}");
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
 
             _logger.LogInformation($"Scryfall updated: {bulkDate}");
             if(DateOnly.FromDateTime(bulkDate).Equals(DateOnly.FromDateTime(lastMerge)))

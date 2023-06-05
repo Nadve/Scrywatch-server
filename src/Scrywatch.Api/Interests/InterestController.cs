@@ -94,7 +94,7 @@ public sealed class InterestController : ControllerBase
                 return Problem("Interest doesn't exist.");
 
             if (interest.UserId != userId)
-                return Problem("You are not authorized to delete this interest.");
+                return Problem("You are not authorized to modify this interest.");
 
             await _interestRepository.Update(request.Id, request.Goal);
         }

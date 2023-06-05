@@ -8,6 +8,8 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 {
     // mapping appsettings.json to Core.Configuration
+    var appsettings = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
+    builder.Configuration.AddJsonFile(appsettings);
     var mailSection = builder.Configuration.GetSection(MailConfiguration.SectionKey);
     var authTokenSection = builder.Configuration.GetSection(AuthTokenConfiguration.SectionKey);
     var clientSection = builder.Configuration.GetSection(ClientConfiguration.SectionKey);
